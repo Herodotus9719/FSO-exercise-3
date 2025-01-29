@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
@@ -93,6 +94,7 @@ const unknownEndpoint = (request, response) => {
 app.use(unknownEndpoint);
 
 const PORT = process.env.PORT || 3001;
+console.log("HERE_________", process.env.PORT);
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
